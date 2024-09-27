@@ -1,0 +1,196 @@
+return  : used to termin method  ,any code uder it wont be executed , return the value to method caller,
+
+sys.out : for out console
+
+exempl : 
+
+class instance {
+ int getInt{ return var=20 ; }  // return here to the caller
+
+ ..main { 
+ instance n = new instance ; 
+sys.out.print ( n.getInt() ) }    // output 20
+
+
+
+
+- in catch exceptions :
+
+ lezm : 1-catch ( child (more specif exception) ) 
+
+        2-catch ( parent (more generated exception))                // lezm haka tkoun l ordre , sinn ken l3aks-> compil error 
+
+
+- it is necessary to follow a try block with either a catch block or a finally block.
+
+   if try + finally -> either error happen or not , the finally code wd be executed
+
+
+
+
+
+///////////////////////////////////
+
+
+methods declar exceptions : 
+
+import java.io.IOException;
+
+public class ExampleClass {
+    public void method() throws IOException {
+      ...
+        throw new IOException("This is an example of an IOException.");
+    }
+}
+
+
+
+public class MainClass {
+    public static void main(String[] args) {
+        ExampleClass example = new ExampleClass();
+        try {
+            example.method();
+        } catch (IOException e) {                                                       // when dealing with method that declares except u have to catch it
+            System.out.println("An IOException occurred: " + e.getMessage());
+        }
+    }
+}
+
+/////////////////////////
+
+
+
+
+unchecked exceptions  -> Runtime exceptions ( exemple : x/0  , when running it would cause a runtime exceptions)
+
+runtime exceptions : either be thrown by JVM / code
+
+errors cant be declared by code -> thrown by the JVM 
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////
+
+Grasshopper i2 = new Grasshopper("g2");
+
+i1 = i2 ;    // i1 and i2 points to the same object Grasshopper("g2")
+
+
+
+
+eligible for garbage collection ?    once object has no reference point yo it , it becomes eligible
+
+ exemple : class bay = new class(o) ; 
+ 
+     two = bay ;
+    bay = null ;
+
+    new class(o) -> become eligible for garbage collect ( the memory it occupies can be reclaimed or reused for future objects )
+
+
+
+
+
+/////////////////////////////////
+
+
+
+OUTER , INNER ?
+
+OUTER: for(int i=0; i<3; )
+{
+        INNER: do {
+                i++; x++;
+                 if(x > 10) break INNER; -> out of INNER LOOP
+                 } while(j <= 2);
+
+}   // outer used for exterieur , inner for the interior (loop / for ..)
+
+
+
+
+
+////////////////////////
+
+
+how to access static var ?
+
+public class Example {
+
+    static int staticVar = 0;
+
+
+public static void staticMethod() {         //static method
+        staticVar = 10; }
+
+
+public void instanceMethod() {    //instance method
+        staticVar = 20;  }
+
+
+}
+
+
+
+////////////////////////////
+
+public class main {
+
+
+int color
+public Egret(String color) {
+    color = color;             // color , and color here refer to the same variable in arguments  / to access var color ->  this.color = color
+}
+
+
+}
+
+
+
+
+////////////////////////
+
+
+RQ : all objects inherits from class 'object'  , u can declare anything by type 'object' and that s true
+
+exemple : 
+ object / string x = "bayy"
+
+
+
+
+
+
+
+/////////////////////
+
+interafece1 {
+    method1{..}
+}
+
+interafece2 {
+    method1{..}          // same method name
+}
+
+class implements interafece1,interafece2 {       //must override the method to avoid the conflict -> sinn err compil         }
+
+
+- default method : the uniq have the choive  : be overriden  or not
+
+
+
+Method Type	Implementation Requirement	Override Option
+Abstract Method	Must be implemented in the implementing class (unless class is abstract)	
+Default Method	Can be used as is or overridden	
+Static Method	Cannot be implemented / inherited / overridden  :  can only be called by the interface name	
+
+
+
+RQ : new LocalDate(2015, 4, 1) -> err compil  , localdata dont have constructor

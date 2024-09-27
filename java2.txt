@@ -1,0 +1,1 @@
+scope variable  = means var can be accessed only within method -> local var

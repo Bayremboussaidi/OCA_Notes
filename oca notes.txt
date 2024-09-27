@@ -1,0 +1,591 @@
+-java file can have multiple classes but 1 single public class 
+
+PROTECTED methods : only heritated class can access it (even if not in same pack )
+
+-when var no declared -> default-priv : can only be accessed within same package (+diff classes)   , with extends ..
+
+-priv : only access within same class
+
+-public ; access from any package
+
+-compile : trans code to executable bytecode
+
+
+
+
+//////////////////////////////
+
+
+how to modify static var inside class ?
+
+ public class Example {
+    static int staticVar = 0; // Static variable
+
+    public void modifyStaticVar(int value) {
+        staticVar = value; // Modifying static variable
+    }
+
+    public void printStaticVar() {
+        System.out.println("Static Variable: " + staticVar);
+    }
+
+    public static void main(String[] args) {
+        Example obj1 = new Example();
+        Example obj2 = new Example();
+
+        obj1.printStaticVar(); // Outputs: Static Variable: 0
+        obj1.modifyStaticVar(10); // obj1 modifies staticVar
+        obj1.printStaticVar(); // Outputs: Static Variable: 10
+        obj2.printStaticVar(); // Outputs: Static Variable: 10
+    }
+}
+
+
+
+- Abstract enforce the subclassing -> cant be instanciated
+
+
+-final interface .. -> wont compile , interface cant be final
+
+-final class .. cant be extended
+
+
+
+
+
+-POLYMORPHYSME : exp : -dog extends animal    /    cat extends animal
+
+                      @override                    @override
+                      method sound(){..aboie}     method sound(){..miaou}
+
+
+
+-ENCAPSULATION : cant change the priv variables of that class , only by using : getters (read) ,setters( for modif)
+
+
+"write once , compile more times" : javac .. -> transform file from : file.java -> file.class : can be runned on any platform with compatible JVM
+
+
+error compil :method(private string x) -> cant define priv /public in method var
+
+
+
+RQ : when overriding methods from interface wala 8irou   -> must be : public (void / string ..) method  // maneha ki tji lbadel lezm tabda lmethod jdida public
+
+
+
+byte (+-128) / short (32.000) / int / long 
+
+
+
+
+0/0  : runtime err : Nan (not a number)
+
+
+CASTING : forcelly convert data type to another
+  ->char c3 =  -12 error , char cant hold negative values   ->solution :   char c3 = (char) -12; (converts it to + decimal)
+
+
+
+int nom.nom   -> . invalid in declaration
+
+
+-10.2F : this should be treated as FLOAT  not double
+
+/////////////////////
+
+
+
+for (int j = 0; j < 5; ) {
+    System.out.println("Prefix: " + ++j); // Prints 1, 2, 3, 4, 5                    ++i : postfix
+}
+
+for (int i = 0; i < 5; i++) {
+    System.out.println("Postfix: " + i++); // Prints 0, 2, 4                          i++ Prefix
+}
+
+
+
+
+
+
+
+int b = 10 ;
+
+int c = 20 - b++;    -> c = 20 - 10  , b = 11
+
+int c = 20 - ++b;    -> c = 20 - 11  , b = 11
+
+
+////////////
+
+a = 10 , b = 15 sys.out.print( a == b) : compil error
+
+
+
+
+
+
+
+String strNum = String.valueOf(num);  // Converts int to String
+
+integer : err compil -> Int / Integre 
+
+
+
+int a = new int(4);
+
+int b = new int(4);
+
+a == b -> FALSE        / int a,b= 4 , a == b : TRUE            WHY : new create new instance and == doesnt refer to the prim
+
+
+
+
+////////////////////
+
+
+
+OVERLOADING : methods in same class have same name with diff parametrs , exp :       void method1(string x){..} ,    string method1(int x){..} ...
+
+-> to name methods overloaded : change : nb of parametrs /ou  parametrs type   /  order of parametrs   
+
+ - No requirement for change return type 
+
+
+
+name.charAt(position) -> caractere
+
+
+name.indexOf('C')
+
+name.substring(position) -> from position to end 
+
+name.substring(position1 , position2)
+
+name.replace('c','2') exp replace 1 occ of c
+
+name.startsWith(..) / endsWith
+
+name.indexOf(..)   // if doesnt exist return -1
+
+////////////////
+
+cas 1: string nom1 = new string('bay);            string nom2 = new string('bay')                      nom1!=nom2              -> nom1.equals(nom2) : TRUE
+
+
+cas 2 : nom1 = "bay"       nom2="bay"      nom1 == nom2  : TRUE
+
+
+name .insert(5, ", John")       /    name.append("prenom")
+
+
+
+stringbuilder vs string ?
+
+ stringbuilder is mutable (can be modified) , exp :sb.append(..) , .replace.. reverse ,    /  string : constant , immutable str+=".."  -> create new chaine string
+
+                                                                                                string.trim() : generate new string without spaces
+
+
+
+
+StringBuilder nom = new StringBuilder("bayrem");                     nom.delete(2,4) :=>      delete start -> end-1      , matouesselch lil final  caractere
+
+
+  nom,substring(start , end) : generate new substring , dont change the content of it
+
+localtime time = localtime.parse(2025-02-15T14:00:00)        , parse converts string to time format   , if string format not valid , it will compile but throws runTimeException 
+
+
+time.plus(period.ofMonths(1))  /  period.ofDays(14) ++14 days   /    period.ofDays(-14)   --14 days   
+
+
+
+time.gethour()    time.getminute()..
+
+
+time.multipliedBy(2) / -2
+
+
+
+period period1 = period.of(1 , 2 ,7) // 1 year 2 months 7 days
+
+rq : you can pass negative time     exp : period.ofDays(-15)
+
+
+
+
+Array vs  ArrayList 
+
+int[] myArray = new int[5]; // size constant                                       ArrayList<Integer> intList = new ArrayList<>(); // size var
+
+list.add("One");  // modified                                                       No modified
+
+list.remove("One");                                                        intList.contains(x) : TRUE / FALSE
+
+
+
+- Clone vs =  in ArrayList ?
+
+clone create new instance of the original (when modif doesnt affect the original one)                                 x = y : when modif it affects the original
+
+
+
+print( %.2f , 2021.2222)    :> output : 2021.22  //2 num after .
+
+ %s : string   /  %d : decimal , integer  / %c caractere  / %b booleen    / %f  float , double
+
+
+
+
+
+declaration :  private string name ;   // par default name == FALSE
+
+
+
+
+constructor : public void class_name {  var = ..} :error        => solution : constructor must contain the same name without return type (void,string..)
+                            
+                                                                  public class_name { var = ..
+
+
+
+in loop : for (initialization; termination; increment) , if smthg missed -> doesnt compile
+
+for (;;) compile , because all the 3 parts exist
+
+
+do {
+
+ //commande                 : this command will be executed once before getting tested by the condition
+
+} while (condition)
+
+
+while : test if false , out     /   do , while : it exec once before the test
+
+
+
+enhanced for loop , meaning : parcours collection , table ... exemple ; for (int number : numbers)
+
+
+
+rq : 
+   public class MyClass {
+    final int a; // declaration only
+
+    public MyClass() {
+        a = 0; // Initialization allowed in the constructor                          otherwise , if not using constructor you cannot give it a value or u will have compile rrr
+
+    }
+
+
+-> so    2 choix : final int a = val     /    or declare + constructor
+
+
+switch(nombre) {
+
+    case 0 ...
+    case 0 ..     2 identiq -> compil error
+
+}
+
+
+
+
+
+
+
+switch(nombre = 3) {
+
+    case 3 ...
+    case 2 ..  break     , gonna execute code in 2 cases , car break is gonna break the execution
+
+}
+
+
+
+inside boucle , continue will make u ignore all what inside that boucle exp :
+int i = 0;
+while (i < 5) {
+    i++;
+    if (i == 3) {
+        continue; // Skip the rest of the loop for this iteration
+    }
+    System.out.println(i);
+}                                                               out : 1 2 4 5 
+
+
+
+
+extends : class -> class                     /      implements : class -> interface
+
+
+
+
+
+overriden method == polymorphic method 
+
+
+
+
+abstract methods dont have body.
+
+concrete method : method with body complete + it can be overriden by inherited class also
+
+ concrete != abstract 
+
+
+methods inside interface (or abstract clases ) : abstract + public by default     exp : void call()  == public abstract void call()
+
+exempl :  interface Animal {
+    void makeSound();  // Abstract method
+   }
+
+   class Dog implements Animal {
+    @Override
+    public void makeSound() {  // Implementing the abstract method
+        System.out.println("Bark");
+    }
+   }
+
+
+RQ : error compiler : if the class that implements interface wont override all the abstract methods / all the abstract methods must be  overriden
+
+
+
+
+default method : give u the choice : be overriden (modified)  or use it  kima hya
+
+exp : interface Vehicle { default void startEngine() { System.out.println("Starting the engine of the vehicl ")} 
+
+    
+    class Car implements Vehicle { }
+
+    public class Main { Car car = new Car();                     /           car.drive();        }
+
+
+
+
+RQ : if class extends 2 interfaces with same method name + dont override it -> err compile
+
+ - ama :method in class >  method in interface
+
+exp : interface car { method cc}
+
+      interface bus { method cc}
+
+      class bay implements car , bus {
+        car.cc // lezmek tzid nom of that related interface  / or / specify related return type to that method  
+      }
+
+
+
+
+CASTING : 
+ types charge  : instance[] table = new int[2]
+                table[0] = new manager , table[1] = new employ   
+                   for (instance i : table) {  if() i instanceOf manager/employ ) {int x = (manager)i  }.. }   // (manager)i  -> CASTING
+
+
+ 1 implicit : big -> small type  , exp : int myInt = 10;  /  double myDouble = myInt;
+
+ 2 explicit : small -> big type , exp :double myDouble = 9.78;  /  int myInt = (int) myDouble;  Outputs 9
+
+
+
+
+faza mtaa constructor : 
+
+   Person(String name) {
+        this.name = name;
+    }
+
+    // Constructor 2
+    Person(String name, int age) {
+        this(name);  // Calls the first constructor
+        this.age = age;
+    }
+  
+  remarque : a call to another consctructor from consctructor must be in the first line
+
+
+
+
+
+
+
+hOW Using super ?
+
+class employ {
+    string nom = "boussaidi";
+    }
+
+ class program extends employ {
+    string prenom = "bayrem" ;
+
+    void print() {
+        sys.print.out(this.prenom) ;
+
+        sys.print.out(super.nom) ;  //super 
+    } 
+
+ }
+
+
+
+Polymorphism : ability of a single method or object to take multiple forms
+
+ 2 types :1- method OVERLOADING
+
+         int add(int a, int b)  /   double add(double a, double b)   /     int add(int a, int b, int c)
+
+         public class Main { calc.add(5, 3) // appel int a int b   ,   calc.add(5.5, 3.2) // appel double
+
+         -> behave differently based on the arguments passed.
+
+
+        2-method Overriding 
+
+        @override // same method name from the super class , different behavior
+
+
+
+diamon problem in java :
+
+class implement and extend interfaces and classes that have same name method 
+
+priorities : - class
+          
+            - interface that extends the other interfaces and have its own method 
+
+            -order (last one written in the Implementation)
+
+
+
+@FunctionalInterface             //interface have 1 abstract method
+interface MyFunctionalInterface {
+    void execute(String message);
+}  
+
+
+
+
+
+
+Lambda :
+
+ exempl :
+ Runnable r = () -> System.out.println("Hello, World!"); // no inputs
+ 
+ Consumer<String> print = str -> System.out.println(str);  // functional interface (1 abstract method )
+
+ Supplier<String> supplier = () -> "Hello, World!";
+
+ BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;  // out : integer   ,     in : integer , integer
+
+ Function<Double, Double> half = (Double x) -> x / 2;
+
+ Predicate<Type> predicate = (Type t) -> { /* condition */ }; // 1 input , booleen output ( funct interface )
+
+
+
+
+
+
+List<Integer> evenNumbers = numbers.stream()                                           // stream : pipeline enables for collect , filter ..
+                                            .filter(n -> n % 2 == 0)       // fetch using predicate 
+                                            .collect(Collectors.toList());   // store to list
+
+                                            exp : Collectors.toMap() / Collectors.toSet() .. 
+
+
+
+
+
+List<Integer> squares = numbers.stream()
+                                       .map(n -> n * n)                   /  .map(Person::getAge) // getAge : method   /     .map(n -> String.format("Number: %d", n)) : transform to chaine
+
+                                       .map(String::length)   /     .map(String::toUpperCase)
+
+                                       .collect(Collectors.toList());
+
+
+
+int stream.range(1,10).Skip(5) / .sum() ; .ForEach( x-> sys.out.print(x) )   // skip(5) : skip the first 5 elements   , //sum : sum from start to end / .average() ;
+
+         .sorted()    / .reversed() : inverser   / 
+ 
+appel method to apply inside map , exp :
+
+ static String toCurrency(double amount) {
+    return String.format("$%.2f", amount);
+                                         }
+
+  // Usage
+  .map(amount -> toCurrency(amount))
+
+
+
+ reduce(0, (a, b) -> a + b)  // 0 start value of the operation
+
+
+
+
+
+
+
+split != join   : fruits = text.split(", ")      =>  ['Apple', 'Banana']    
+
+                text = ", ".join(fruits)       =>' Apple, Banana'
+
+
+
+
+rq : name = "bb /* yy (return to next lign)
+           */ ll " ;
+
+
+
+sys.out.print (name) // l return a la ligne ta3ml compil error    -      to fix it   ->  name = "bb /* yy /n" + "*/ ll " 
+
+
+
+
+StackOverflowError :
+
+public static void incorrectMethod() {
+    System.out.println("This will cause a StackOverflowError");
+    incorrectMethod(); // No base case to stop recursion
+}
+
+public static void main(String[] args) {
+    incorrectMethod(); // Uncommenting this will cause StackOverflowError        No retorn , no output -> cause infinite cycle of call for this method
+}
+
+
+
+Throwable
+├── Error
+│   ├── AssertionError
+│   ├── ExceptionInInitializerError
+│   ├── OutOfMemoryError
+│   └── StackOverflowError
+└── Exception
+    ├── IOException (Checked)
+    ├── SQLException (Checked)
+    ├── ClassNotFoundException (Checked)
+    ├── RuntimeException (Unchecked)
+    │   ├── NullPointerException
+    │   ├── ArrayIndexOutOfBoundsException
+    │   ├── IllegalArgumentException
+    │   ├── ClassCastException
+    │   └── ArithmeticException
+    └── ParseException (Checked)
+
+                 
+               
+
+
+

@@ -1,0 +1,106 @@
+Java is an object-oriented language. not Procedural programming lang  /  java use references , not pointers like C / java code executed bu JDK ( anywhere that holds JDK)
+
+local variable is a variable that is declared within a function, method, or a block of code
+
+ Local variables do not have a default value; they must be initialized before use.
+
+
+instance variable :  declared inside a class but outside any method 
+ 
+ instance var have default value
+
+class var : static var x ( var appartient au classe )
+
+
+
+
+
+
+- RQ : int num, String value; // DOES NOT COMPILE   ->    to declare multip var in same statement they have to be in the same type
+
+
+double d1, double d2; // compil err   ->  double d1 , d2
+
+
+in java : class , name , var   (rules) : valid : can begin with just ( $ , _ , a-z )      /  invalid : begin with (0-9) , class , @ , ' '(espace in first or either inside) , any
+                                    
+                                                                                               java reserved keuword ( return , int ..)
+
+
+
+
+
+
+ javac Zoo.java
+ java Zoo
+
+-cycle java run : the JDK (JRE inside the JDK is enough , dont need the whole JDK) (javac) is used to compile Java code into bytecode, 
+   while the JRE (which contains the JVM)   (java command) is what actually executes that bytecode 
+
+
+
+exercic :         int randomNumber = random.nextInt(10);  //generate aleatoire val between 0-9
+
+
+
+
+///////////////////////////////////
+
+private String brand;
+
+private String brand;
+
+// f west instanciation mtaa class 'wb'
+
+ 
+        System.out.print( wb.brand);   // output : null
+
+        System.out.print( wb.empty);  //output 'False'   (
+
+
+
+
+/////////////////////////////////////////////
+
+imports :
+
+Must-have imports are for any necessary classes not in java.lang and for user-defined classes in different packages.
+
+
+Optional imports can include automatic imports from java.lang, unnecessary multiple imports, and wildcard imports that do not lead to ambiguity.
+
+
+
+declar : String abc[]  == String[] abc , public void main(..) 
+
+but String[] abc is more used ,      String abc[] = new string[10]  : used in declar    
+
+
+
+
+condition1 ? (condition2 ? value_if_condition2_true : value_if_condition2_false) : value_if_condition1_false
+ 
+x=5 
+ exp : System.out.println(x > 2 ? x < 4 ? 10 : 8 : 7);
+ //out : 8
+
+
+
+
+x = (y != 10) ^ (z = false)      ^  xor kaaba b kaaba
+
+
+
+
+
+i = i++   //doesnt increment the i here
+
+
+
+
+byte [-127 , 127]
+
+ exp : byte a = 120;
+      byte b = 10;
+      byte result = (byte) (a + b);
+      System.out.println(result);  // Output: -126      ,Overflow/Underflow   :    when result exceed max , it return from the pther side

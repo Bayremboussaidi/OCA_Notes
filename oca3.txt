@@ -1,0 +1,35 @@
+Checked exceptions
+
+Exception (the superclass of all exceptions)
+IOException (indicates an input/output operation failure)
+SQLException (related to database access errors)
+ClassNotFoundException (when a class is not found)
+
+
+
+
+
+Unchecked Exceptions -> runtimeExcept / Errors
+
+
+RuntimeExceptions :
+RuntimeException (the superclass for all unchecked exceptions)
+NullPointerException (thrown when an application attempts to use null where an object is required)
+IllegalArgumentException (thrown to indicate that a method has been passed an illegal or inappropriate argument)
+IndexOutOfBoundsException (thrown to indicate that an index is out of range)
+NumberFormatException (thrown when trying to convert a string to a numeric type, but the string doesn't have the appropriate format)
+ClassCastException (thrown when trying to cast an object to a subclass of which it is not an instance)
+
+
+
+
+errors :
+
+StackOverflowError (indicates that the application has recursed too deeply)
+OutOfMemoryError (indicates that the JVM has run out of memory)
+NoClassDefFoundError (indicates that the JVM cannot find a particular class)
+
+
+
+///////////////////////////////////////////////////
+
